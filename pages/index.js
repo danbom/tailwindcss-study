@@ -2,6 +2,7 @@ import Head from "next/head";
 import Image from "next/image";
 import { useState } from "react";
 import styles from "../styles/Home.module.css";
+import HeroSections from "../components/sections/HeroSections";
 
 export default function Home() {
   const [dark, setDark] = useState(false);
@@ -9,5 +10,9 @@ export default function Home() {
   const toggleDark = () => {
     setDark(!dark);
   };
-  return <div className={dark ? "dark" : ""}></div>;
+  return (
+    <div className={dark ? "dark" : ""}>
+      <HeroSections />
+    </div>
+  );
 }
