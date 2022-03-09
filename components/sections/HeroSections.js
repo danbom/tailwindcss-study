@@ -15,9 +15,10 @@ const navigation = [
 export default function HeroSections() {
   return (
     <div className="relative">
-      <div className="max-w-7xl mx-auto">
-        <div className="relative mx-auto z-10 pb-8 sm:pb-16 md:pb-20 lg:max-w-4xl lg:w-full lg:pb-28 xl:pb-32">
-          <Popover>
+      <div className="w-full mx-auto">
+        <div className="relative mx-auto z-10 pb-8 sm:pb-16 md:pb-20 lg:w-full lg:pb-28 xl:pb-32 tracking-tighter">
+          {/* header */}
+          {/* <Popover>
             <div className="relative pt-3 px-4 sm:px-6 lg:px-8">
               <nav
                 className="relative flex items-center justify-between sm:h-10 lg:justify-start"
@@ -52,7 +53,7 @@ export default function HeroSections() {
                     <a
                       key={item.name}
                       href={item.href}
-                      className="px-4 py-3 rounded-lg text-sm text-gray-900 font-medium tracking-tighter hover:bg-slate-100"
+                      className="px-4 py-3 rounded-lg text-sm text-gray-900 font-medium hover:bg-slate-100"
                     >
                       {item.name}
                     </a>
@@ -104,16 +105,16 @@ export default function HeroSections() {
                 </div>
               </Popover.Panel>
             </Transition>
-          </Popover>
+          </Popover> */}
 
-          <main className="mt-14 mx-auto max-w-7xl px-4 sm:mt-20 sm:px-6 md:mt-36 lg:mt-36 lg:px-8 xl:mt-36">
-            <div className="sm:text-center lg:text-center">
-              <h1 className="text-4xl tracking-tighter font-extrabold text-gray-900 sm:text-5xl md:text-6xl space-y-6">
-                <div>금융의 모든 것</div>
-                <div>토스에서 쉽고 간편하게</div>
-              </h1>
+          <main>
+            {/* section1 main */}
+            <div className="h-screen sm:text-center lg:text-center">
+              <p className="w-fit mx-auto pt-44 text-4xl font-extrabold text-gray-900 sm:text-5xl md:text-6xl  md:leading-snug space-y-6">
+                금융의 모든 것<br /> 토스에서 쉽고 간편하게
+              </p>
 
-              <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-center">
+              <div className="w-fit mt-5 mx-auto sm:mt-8 sm:flex sm:justify-center md:mt-16 lg:justify-center">
                 <div className="rounded-md shadow">
                   <Button
                     icon="/static/image/applekorea.png"
@@ -128,9 +129,77 @@ export default function HeroSections() {
                 </div>
               </div>
             </div>
+
+            {/* section2 main */}
+            <div className="w-full bg-slate-50">
+              <p className="w-fit mx-auto py-60 text-3xl text-center font-semibold leading-normal">
+                내 모든 금융 내역을 한눈에 조회하고 한 곳에서 관리하세요.
+                <br /> 이제껏 경험 못 했던 쉽고 편리한 금융 서비스, <br />
+                토스와 함께라면 당신의 일상이 새로워질 거예요.
+              </p>
+            </div>
+
+            {/* section3 main */}
+            <div className="relative w-full h-[1687px]">
+              <div className="w-fit mx-[430px] py-64">
+                <span className="text-2xl text-blue-500 font-semibold">
+                  홈 · 소비
+                </span>
+                <p className="w-fit mt-8 text-5xl text-slate-800 font-semibold leading-snug">
+                  내 돈 관리, <br />
+                  지출부터 일정까지 <br />
+                  똑똑하게
+                </p>
+              </div>
+              {/* section3 phone */}
+              <div className="absolute w-full top-64">
+                <div className="absolute w-[600px] h-[936px] right-[320px]">
+                  <img
+                    className="absolute w-[57%] left-32 top-24"
+                    src="static/image/section3_home_01.png"
+                  />
+                  <img
+                    className="absolute w-full h-full"
+                    src="static/image/iPhone12_Clay_Shadow.png"
+                  />
+                </div>
+                <div className="absolute w-[600px] h-[936px] left-[320px] top-80">
+                  <img
+                    className="absolute w-[57%] left-32 top-24"
+                    src="static/image/section3_home_02.png"
+                  />
+                  <img
+                    className="absolute w-full h-full"
+                    src="static/image/iPhone12_Clay_Shadow.png"
+                  />
+                </div>
+              </div>
+
+              <p className="absolute w-fit top-[1230px] right-[390px] text-2xl text-slate-700 font-semibold">
+                토스에 계좌와 카드를 연결해 보세요. <br />
+                잔고, 대출·투자 내역은 기본, <br />
+                카드 실적 달성과 일자별 소비와 수입을 <br />한 번에 볼 수
+                있어요.
+              </p>
+            </div>
+
+            {/* section4 main */}
+            <div className="relative w-full h-[1687px]">
+              <div className="w-fit mx-[430px] py-64">
+                <span className="text-2xl text-blue-500 font-semibold">
+                  송금
+                </span>
+                <p className="w-fit mt-8 text-5xl text-slate-800 font-semibold leading-snug">
+                  간편하고 안전하게 <br />
+                  수수료는 평생 무료로, <br />
+                  이런 송금 써보셨나요?
+                </p>
+              </div>
+            </div>
           </main>
         </div>
       </div>
+      {/* section1 background */}
       <div className="absolute w-full top-0">
         <img
           className="w-full h-screen object-cover"
@@ -138,7 +207,8 @@ export default function HeroSections() {
           alt=""
         />
       </div>
-      <div class="absolute top-0 w-full h-5/6 bg-gradient-to-t from-white/10 to-white/100"></div>
+      {/* section1 gradient */}
+      <div class="absolute top-0 w-full h-2/5 bg-gradient-to-t from-white/0 to-white/100"></div>
     </div>
   );
 }
