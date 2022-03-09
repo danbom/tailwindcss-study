@@ -3,6 +3,7 @@ import { Fragment } from "react";
 import { Popover, Transition } from "@headlessui/react";
 import { MenuIcon, XIcon } from "@heroicons/react/outline";
 import Button from "../common/Button";
+import Section from "../common/Section";
 
 const navigation = [
   { name: "회사 소개", href: "#" },
@@ -18,97 +19,9 @@ export default function HeroSections() {
       <div className="w-full mx-auto">
         <div className="relative mx-auto z-10 pb-8 sm:pb-16 md:pb-20 lg:w-full lg:pb-28 xl:pb-32 tracking-tighter">
           {/* header */}
-          {/* <Popover>
-            <div className="relative pt-3 px-4 sm:px-6 lg:px-8">
-              <nav
-                className="relative flex items-center justify-between sm:h-10 lg:justify-start"
-                aria-label="Global"
-              >
-                <div className="flex items-center flex-grow flex-shrink-0 lg:flex-grow-0">
-                  <div className="flex items-center justify-between w-full md:w-auto">
-                    <a href="#" className="w-20">
-                      <span className="sr-only">Workflow</span>
-                      <svg
-                        data-name="Layer 1"
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 453.07 120"
-                        class=" "
-                      >
-                        <path
-                          d="M124.25 59.34a54.37 54.37 0 00-53.4-48.06h-.6a54.58 54.58 0 00-27.31 7.35l-.41.25-.36.21C11.09 37.6 0 80.34 0 106.36l25-14.45c8.82 16.81 25.75 27.88 44.62 28.09h.6a53.62 53.62 0 006.3-.37 54.37 54.37 0 0047.73-60.29zM399.63 86.56c3.67 7.29 10.23 11.08 18.91 11.06 8.52 0 13.08-4.15 13.06-9 0-5.93-8.84-7.28-19.36-9.38-13.85-2.88-29.24-7.1-29.24-24.45 0-13.85 13.33-25.91 33.58-25.81 16.08 0 26.17 5.56 33.64 15.09L432.73 54.2c-3.36-5.47-8.55-8.65-16.16-8.63-8.22 0-12.17 3.38-12.16 8 0 5.17 6.72 6.52 18.75 9.08 13.71 2.7 29.86 7.38 29.91 25 0 12.79-11.35 27.27-35.25 27.19-18 .05-29.93-6.17-36.83-17.44zM324.52 86.56c3.68 7.29 10.23 11.08 18.91 11.06 8.52 0 13.08-4.15 13.07-9 0-5.93-8.85-7.28-19.36-9.38-13.86-2.86-29.25-7.08-29.29-24.43 0-13.85 13.32-25.91 33.57-25.81 16.09 0 26.17 5.56 33.65 15.09L357.62 54.2c-3.36-5.47-8.55-8.65-16.16-8.63-8.22 0-12.17 3.38-12.15 8 0 5.17 6.71 6.52 18.75 9.08 13.7 2.7 29.85 7.38 29.9 25 0 12.79-11.34 27.27-35.25 27.19-18 .05-29.93-6.17-36.82-17.44zM258.26 29a42.92 42.92 0 1042.92 42.9A42.93 42.93 0 00258.26 29zm0 65.81a22.89 22.89 0 1122.89-22.91 22.89 22.89 0 01-22.89 22.89zM204.23 89.13c-2.64 2.11-8.17 4.71-10.94 4.71-5.38 0-9.07-3.07-9.07-11.83V49.4h25.55V30.66h-25.55V0l-21.29 12.29v18.37h-17V49.4h17v34.52c0 22.6 10.54 30.9 27.9 30.9 7.68 0 17.93-4.55 23.3-8.54z"
-                          fill="#0064ff"
-                        ></path>
-                      </svg>
-                    </a>
-                    <div className="-mr-2 flex items-center md:hidden">
-                      <Popover.Button className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
-                        <span className="sr-only">Open main menu</span>
-                        <MenuIcon className="h-6 w-6" aria-hidden="true" />
-                      </Popover.Button>
-                    </div>
-                  </div>
-                </div>
-                <div className="hidden md:block md:ml-10 md:pr-4 md:space-x-2">
-                  {navigation.map((item) => (
-                    <a
-                      key={item.name}
-                      href={item.href}
-                      className="px-4 py-3 rounded-lg text-sm text-gray-900 font-medium hover:bg-slate-100"
-                    >
-                      {item.name}
-                    </a>
-                  ))}
-                </div>
-              </nav>
-            </div>
-
-            <Transition
-              as={Fragment}
-              enter="duration-150 ease-out"
-              enterFrom="opacity-0 scale-95"
-              enterTo="opacity-100 scale-100"
-              leave="duration-100 ease-in"
-              leaveFrom="opacity-100 scale-100"
-              leaveTo="opacity-0 scale-95"
-            >
-              <Popover.Panel
-                focus
-                className="absolute z-10 top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden"
-              >
-                <div className="rounded-lg shadow-md bg-white ring-1 ring-black ring-opacity-5 overflow-hidden">
-                  <div className="px-5 pt-4 flex items-center justify-between">
-                    <div>
-                      <img
-                        className="h-8 w-auto"
-                        src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg"
-                        alt=""
-                      />
-                    </div>
-                    <div className="-mr-2">
-                      <Popover.Button className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
-                        <span className="sr-only">Close main menu</span>
-                        <XIcon className="h-6 w-6" aria-hidden="true" />
-                      </Popover.Button>
-                    </div>
-                  </div>
-                  <div className="px-2 pt-2 pb-3 space-y-1">
-                    {navigation.map((item) => (
-                      <a
-                        key={item.name}
-                        href={item.href}
-                        className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50"
-                      >
-                        {item.name}
-                      </a>
-                    ))}
-                  </div>
-                </div>
-              </Popover.Panel>
-            </Transition>
-          </Popover> */}
 
           <main>
-            {/* section1 main */}
+            {/* section1 */}
             <div className="h-screen sm:text-center lg:text-center">
               <p className="w-fit mx-auto pt-44 text-4xl font-extrabold text-gray-900 sm:text-5xl md:text-6xl  md:leading-snug space-y-6">
                 금융의 모든 것<br /> 토스에서 쉽고 간편하게
@@ -129,73 +42,301 @@ export default function HeroSections() {
                 </div>
               </div>
             </div>
-
-            {/* section2 main */}
-            <div className="w-full bg-slate-50">
-              <p className="w-fit mx-auto py-60 text-3xl text-center font-semibold leading-normal">
+            {/* section2 */}
+            <div className="flex items-center w-full h-[603px] bg-slate-50">
+              <p className="w-fit mx-auto text-3xl text-center font-semibold leading-normal">
                 내 모든 금융 내역을 한눈에 조회하고 한 곳에서 관리하세요.
                 <br /> 이제껏 경험 못 했던 쉽고 편리한 금융 서비스, <br />
                 토스와 함께라면 당신의 일상이 새로워질 거예요.
               </p>
             </div>
-
-            {/* section3 main */}
-            <div className="relative w-full h-[1687px]">
-              <div className="w-fit mx-[430px] py-64">
-                <span className="text-2xl text-blue-500 font-semibold">
-                  홈 · 소비
-                </span>
-                <p className="w-fit mt-8 text-5xl text-slate-800 font-semibold leading-snug">
+            {/* section3 */}
+            <Section
+              h="h-[1687px]"
+              sub="홈 · 소비"
+              title={
+                <>
                   내 돈 관리, <br />
                   지출부터 일정까지 <br />
                   똑똑하게
-                </p>
-              </div>
-              {/* section3 phone */}
-              <div className="absolute w-full top-64">
-                <div className="absolute w-[600px] h-[936px] right-[320px]">
-                  <img
-                    className="absolute w-[57%] left-32 top-24"
-                    src="static/image/section3_home_01.png"
-                  />
-                  <img
-                    className="absolute w-full h-full"
-                    src="static/image/iPhone12_Clay_Shadow.png"
-                  />
-                </div>
-                <div className="absolute w-[600px] h-[936px] left-[320px] top-80">
-                  <img
-                    className="absolute w-[57%] left-32 top-24"
-                    src="static/image/section3_home_02.png"
-                  />
-                  <img
-                    className="absolute w-full h-full"
-                    src="static/image/iPhone12_Clay_Shadow.png"
-                  />
-                </div>
-              </div>
+                </>
+              }
+              outcontent={
+                <>
+                  <div className="absolute w-full top-64">
+                    <div className="absolute w-[600px] h-[936px] right-[17%]">
+                      <img
+                        className="absolute w-[57%] left-32 top-24"
+                        src="static/image/section3_home_01.png"
+                      />
+                      <img
+                        className="absolute w-full h-full"
+                        src="static/image/iPhone12_Clay_Shadow.png"
+                      />
+                    </div>
+                    <div className="absolute w-[600px] h-[936px] left-[17%] top-80">
+                      <img
+                        className="absolute w-[57%] left-32 top-24"
+                        src="static/image/section3_home_02.png"
+                      />
+                      <img
+                        className="absolute w-full h-full"
+                        src="static/image/iPhone12_Clay_Shadow.png"
+                      />
+                    </div>
+                  </div>
 
-              <p className="absolute w-fit top-[1230px] right-[390px] text-2xl text-slate-700 font-semibold">
-                토스에 계좌와 카드를 연결해 보세요. <br />
-                잔고, 대출·투자 내역은 기본, <br />
-                카드 실적 달성과 일자별 소비와 수입을 <br />한 번에 볼 수
-                있어요.
-              </p>
-            </div>
-
-            {/* section4 main */}
-            <div className="relative w-full h-[1687px]">
-              <div className="w-fit mx-[430px] py-64">
-                <span className="text-2xl text-blue-500 font-semibold">
-                  송금
-                </span>
-                <p className="w-fit mt-8 text-5xl text-slate-800 font-semibold leading-snug">
-                  간편하고 안전하게 <br />
-                  수수료는 평생 무료로, <br />
+                  <p className="absolute w-fit top-[1230px] right-[20%] text-2xl text-slate-700 font-semibold">
+                    토스에 계좌와 카드를 연결해 보세요. <br />
+                    잔고, 대출·투자 내역은 기본, <br />
+                    카드 실적 달성과 일자별 소비와 수입을 <br />한 번에 볼 수
+                    있어요.
+                  </p>
+                </>
+              }
+            />
+            {/* section4 */}
+            <Section
+              h="h-[2310px]"
+              bg="bg-slate-50"
+              sub="송금"
+              title={
+                <>
+                  간편하고 안전하게 <br /> 수수료는 평생 무료로, <br />
                   이런 송금 써보셨나요?
-                </p>
-              </div>
-            </div>
+                </>
+              }
+              outcontent={
+                <div className="mt-24 space-y-28">
+                  <div className="flex justify-center items-center ml-[5%] space-x-32">
+                    <div>
+                      <p className="flex mb-4">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 24 24"
+                          className="w-7 h-7 mr-1"
+                        >
+                          <path fill="none" d="M0 0h24v24H0z"></path>
+                          <g
+                            fill="none"
+                            stroke="#007ff2"
+                            stroke-width="1.8"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-miterlimit="10"
+                          >
+                            <path d="M16.25 8.92l-1.85 6.71c-.06.2-.34.2-.4 0l-1.8-6.56c-.06-.2-.34-.2-.4 0L10 15.63c-.06.2-.34.2-.4 0L7.75 8.92M15.3 12.35H18M8.7 12.35H6"></path>
+                          </g>
+                          <circle
+                            cx="12"
+                            cy="1.97"
+                            r="1.98"
+                            fill="#4d9cff"
+                          ></circle>
+                          <circle
+                            transform="rotate(-60 3.313 6.985)"
+                            cx="3.31"
+                            cy="6.98"
+                            fill="#74b6ff"
+                            r="1.98"
+                          ></circle>
+                          <circle
+                            transform="rotate(-30 3.312 17.015)"
+                            cx="3.31"
+                            cy="17.02"
+                            fill="#007ff2"
+                            r="1.98"
+                          ></circle>
+                          <circle
+                            cx="12"
+                            cy="22.03"
+                            r="1.98"
+                            fill="#4d9cff"
+                          ></circle>
+                          <circle
+                            transform="rotate(-60 20.687 17.016)"
+                            cx="20.69"
+                            cy="17.02"
+                            fill="#74b6ff"
+                            r="1.98"
+                          ></circle>
+                          <circle
+                            transform="rotate(-30 20.686 6.986)"
+                            cx="20.69"
+                            cy="6.98"
+                            fill="#007ff2"
+                            r="1.98"
+                          ></circle>
+                        </svg>
+                        <span className="text-xl text-sky-600 font-semibold tracking-tighter">
+                          평생 무료 송금
+                        </span>
+                      </p>
+                      <p className="mb-7 text-4xl text-slate-700 font-semibold leading-snug tracking-tighter">
+                        토스 평생 무료송금으로
+                        <br /> 모두의 금융에 자유를
+                      </p>
+                      <p className="text-xl text-slate-600/70 font-bold tracking-tighter">
+                        누구에게 보내든 은행 상관 없이, <br />
+                        이제 토스와 함께 수수료 걱정 없이 송금하세요.
+                      </p>
+                    </div>
+                    <div className="w-[31%]">
+                      <img
+                        className="w-full"
+                        src="static/image/section4_2_01.png"
+                      />
+                    </div>
+                  </div>
+                  <div className="flex justify-center items-center space-x-24">
+                    <div className="w-[29%]">
+                      <img
+                        className="w-full"
+                        src="static/image/section4_2_02.png"
+                      />
+                    </div>
+                    <div>
+                      <p className="flex mb-4">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 24 24"
+                          className="w-7 h-7 mr-1"
+                        >
+                          <path
+                            d="M11.6.7L2.9 4.2c-.4.2-.7.6-.7 1v8.3c0 3.8 4.8 7.5 9.3 9.8.3.1.6.1.9 0 4.5-2.3 9.3-6 9.3-9.8V5.2c0-.4-.2-.8-.6-.9L12.4.7c-.3-.1-.6-.1-.8 0z"
+                            fill="#007ff7"
+                          ></path>
+                          <path
+                            d="M10.9 15.8c-.3 0-.5-.1-.7-.3l-3.4-3.4c-.4-.4-.4-1 0-1.4.4-.4 1-.4 1.4 0l2.7 2.7 4.9-4.9c.4-.4 1-.4 1.4 0s.4 1 0 1.4l-5.6 5.6c-.2.2-.4.3-.7.3z"
+                            fill="#fff"
+                          ></path>
+                        </svg>
+                        <span className="text-xl text-sky-600 font-semibold tracking-tighter">
+                          사기계좌 조회
+                        </span>
+                      </p>
+                      <p className="mb-7 text-4xl text-slate-700 font-semibold leading-snug tracking-tighter">
+                        송금 전 사기 내역 조회로 <br />
+                        피해를 미리 방지할 수 있어요
+                      </p>
+                      <p className="text-xl text-slate-600/70 font-bold tracking-tighter">
+                        송금 전 토스가 알아서 사기 내역 조회를 해드려요. <br />
+                        상대방의 연락처 또는 계좌가 사기 계좌인지 조회해
+                        <br /> 안전하게 송금할 수 있어요.
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex justify-center items-center ml-[5%] space-x-32">
+                    <div>
+                      <p className="flex mb-4">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 24 24"
+                          className="w-7 h-7 mr-1"
+                        >
+                          <g fill-rule="evenodd" clip-rule="evenodd">
+                            <path
+                              d="M12 2.5c-5.2 0-9.5 4.3-9.5 9.5s4.3 9.5 9.5 9.5 9.5-4.3 9.5-9.5-4.3-9.5-9.5-9.5m0 21C5.7 23.5.5 18.3.5 12S5.7.5 12 .5 23.5 5.7 23.5 12 18.3 23.5 12 23.5"
+                              fill="#afb7c0"
+                            ></path>
+                            <path
+                              d="M12 2.5c-5.2 0-9.5 4.3-9.5 9.5s4.3 9.5 9.5 9.5 9.5-4.3 9.5-9.5-4.3-9.5-9.5-9.5"
+                              fill="#fff"
+                            ></path>
+                            <path
+                              d="M7.3 15.9c-.3 0-.6-.2-.8-.4-.3-.5-.2-1.1.3-1.4l4.7-3.2c.5-.3 1.1-.2 1.4.3.3.5.2 1.1-.3 1.4l-4.7 3.1c-.2.2-.4.2-.6.2"
+                              fill="#ef4452"
+                            ></path>
+                            <path
+                              d="M12 12.8c-.6 0-1-.4-1-1V6.6c0-.6.4-1 1-1s1 .4 1 1v5.2c0 .5-.4 1-1 1"
+                              fill="#4e5968"
+                            ></path>
+                          </g>
+                        </svg>
+                        <span className="text-xl text-sky-600 font-semibold tracking-tighter">
+                          자동이체 예약
+                        </span>
+                      </p>
+                      <p className="mb-7 text-4xl text-slate-700 font-semibold leading-snug tracking-tighter">
+                        은행 점검 시간,
+                        <br /> 기다릴 필요 없어요
+                      </p>
+                      <p className="text-xl text-slate-600/70 font-bold tracking-tighter">
+                        은행 점검 시간에는 자동이체 예약을 이용해보세요. <br />
+                        점검 시간이 끝나면 토스가 알아서 송금해드릴게요.
+                      </p>
+                    </div>
+                    <div className="w-[31%]">
+                      <img
+                        className="w-full"
+                        src="static/image/section4_2_03.png"
+                      />
+                    </div>
+                  </div>
+                </div>
+              }
+            />
+            {/* section5 */}
+            <Section
+              h="h-[1326px]"
+              sub="대출"
+              title={
+                <>
+                  여러 은행의 조건을
+                  <br />
+                  1분 만에
+                  <br />
+                  확인해보세요
+                </>
+              }
+              incontent={
+                <>
+                  <p className="w-fit mt-64 text-5xl text-slate-700 font-semibold leading-snug tracking-tighter">
+                    한도는 <span className="text-slate-600">높게,</span>
+                    <br />
+                    금리는 <span className="text-slate-500">낮게,</span>
+                    <br />
+                    부담은 <span className="text-slate-300">적게.</span>
+                  </p>
+                  <p className="w-fit mt-10 text-xl text-slate-700 font-semibold leading-snug">
+                    앉은 자리에서 여러 은행의 한도와 금리를 비교하고
+                    <br />
+                    내게 꼭 맞는 대출을 찾아보세요.
+                    <br />
+                    신용, 비상금, 대환, 주택담보대출 모두 가능해요.
+                  </p>
+                </>
+              }
+              outcontent={
+                <div className="absolute w-full top-52">
+                  <div className="absolute w-[600px] h-[936px] right-[17%]">
+                    <img
+                      className="absolute w-[57%] left-32 top-24"
+                      src="static/image/section5_3_loan_01.png"
+                    />
+                    <img
+                      className="absolute w-full h-full"
+                      src="static/image/iPhone12_Clay_Shadow.png"
+                    />
+                  </div>
+                </div>
+              }
+            />
+            {/* section6 main */}
+            <Section
+              h="h-[1686px]"
+              bg="bg-slate-50"
+              sub="신용"
+              title={
+                <>
+                  금융 생활의 첫 걸음,
+                  <br />
+                  신용점수를 미리
+                  <br />
+                  무료로 관리하세요
+                </>
+              }
+            />
           </main>
         </div>
       </div>
@@ -208,7 +349,7 @@ export default function HeroSections() {
         />
       </div>
       {/* section1 gradient */}
-      <div class="absolute top-0 w-full h-2/5 bg-gradient-to-t from-white/0 to-white/100"></div>
+      <div class="absolute top-0 w-full h-[11%] bg-gradient-to-t from-white/0 to-white/100"></div>
     </div>
   );
 }
