@@ -1,6 +1,6 @@
 import React from "react";
 
-function Section({ h, bg, sub, title, incontent, outcontent }) {
+function Section({ h, bg, sub, title, content, children }) {
   return (
     <div className={`relative w-full ${h} ${bg}`}>
       <div className="w-fit mx-[22%] pt-64">
@@ -8,9 +8,9 @@ function Section({ h, bg, sub, title, incontent, outcontent }) {
         <p className="w-fit mt-8 text-5xl text-slate-800 font-semibold leading-snug">
           {title}
         </p>
-        {incontent}
+        {content}
       </div>
-      {outcontent}
+      {children}
     </div>
   );
 }
