@@ -9,6 +9,7 @@ import Remittance from "./contents/Remittance";
 import Loans from "./contents/Loans";
 import Credit from "./contents/Credit";
 import Investment from "./contents/Investment";
+import { useScrollFadeIn } from "../../hooks/useScrollFadeIn";
 
 const navigation = [
   { name: "회사 소개", href: "#" },
@@ -19,6 +20,7 @@ const navigation = [
 ];
 
 export default function HeroSections() {
+  const animatedItem = useScrollFadeIn();
   return (
     <div className="relative">
       <div className="w-full mx-auto">
@@ -49,7 +51,10 @@ export default function HeroSections() {
             </div>
             {/* section2 */}
             <div className="flex items-center w-full h-[603px] bg-slate-50">
-              <p className="w-fit mx-auto text-3xl text-center font-semibold leading-normal">
+              <p
+                {...animatedItem}
+                className="w-fit mx-auto text-3xl text-center font-semibold leading-normal"
+              >
                 내 모든 금융 내역을 한눈에 조회하고 한 곳에서 관리하세요.
                 <br /> 이제껏 경험 못 했던 쉽고 편리한 금융 서비스, <br />
                 토스와 함께라면 당신의 일상이 새로워질 거예요.
