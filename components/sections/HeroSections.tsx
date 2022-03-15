@@ -66,6 +66,8 @@ export default function HeroSections() {
                   똑똑하게
                 </>
               }
+              bg={undefined}
+              content={undefined}
             >
               <Home_Comsumption />
             </Section>
@@ -80,6 +82,7 @@ export default function HeroSections() {
                   이런 송금 써보셨나요?
                 </>
               }
+              content={undefined}
             >
               <Remittance />
             </Section>
@@ -114,6 +117,7 @@ export default function HeroSections() {
                   </p>
                 </>
               }
+              bg={undefined}
             >
               <Loans />
             </Section>
@@ -132,7 +136,9 @@ export default function HeroSections() {
                 </>
               }
               content={<Credit />}
-            />
+            >
+              {undefined}
+            </Section>
             {/* section7 */}
             <Section
               h="h-[1723px]"
@@ -144,6 +150,8 @@ export default function HeroSections() {
                   모두가 할 수 있도록
                 </>
               }
+              bg={undefined}
+              content={undefined}
             >
               <Investment />
             </Section>
@@ -159,7 +167,7 @@ export default function HeroSections() {
         />
       </div>
       {/* section1 gradient */}
-      <div class="absolute top-0 w-full h-[11%] bg-gradient-to-t from-white/0 to-white/100"></div>
+      <div className="absolute top-0 w-full h-[11%] bg-gradient-to-t from-white/0 to-white/100"></div>
     </div>
   );
 }
